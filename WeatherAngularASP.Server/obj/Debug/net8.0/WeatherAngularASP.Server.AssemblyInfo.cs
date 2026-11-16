@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WeatherAngularASP.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34e9e3d3bbd64f7ca9f871baa5616d8b34cc1f7d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce7947c1e7f0fcfef4aa8fde2a85f899232606c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("WeatherAngularASP.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WeatherAngularASP.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
