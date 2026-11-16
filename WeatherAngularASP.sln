@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherAngularASP.Server", 
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "weatherangularasp.client", "weatherangularasp.client\weatherangularasp.client.esproj", "{FF21ECC9-4450-4B6F-8327-65977D3E4474}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherAngularASP.Server.Tests", "WeatherAngularASP.Server.Tests\WeatherAngularASP.Server.Tests.csproj", "{E8E34139-1DE5-4864-8681-541188A74C13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{FF21ECC9-4450-4B6F-8327-65977D3E4474}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF21ECC9-4450-4B6F-8327-65977D3E4474}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FF21ECC9-4450-4B6F-8327-65977D3E4474}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E8E34139-1DE5-4864-8681-541188A74C13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8E34139-1DE5-4864-8681-541188A74C13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8E34139-1DE5-4864-8681-541188A74C13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8E34139-1DE5-4864-8681-541188A74C13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

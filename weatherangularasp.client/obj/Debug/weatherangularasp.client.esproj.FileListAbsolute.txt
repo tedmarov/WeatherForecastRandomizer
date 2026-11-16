@@ -1,1 +1,2 @@
-C:\Users\tedma\source\repos\WeatherAngularASP\weatherangularasp.client\obj\Debug\weatherangularasp.client.esproj.CoreCompileInputs.cache
+C:/Users/tedma/source/repos/WeatherAngularASP/weatherangularasp.client/obj/Debug/weatherangularasp.client.esproj.CoreCompileInputs.cache
+/home/tedmarov/workspace/WeatherForecastRandomizer/weatherangularasp.client/obj/Debug/weatherangularasp.client.esproj.CoreCompileInputs.cache

@@ -3,28 +3,48 @@
 </p>
 
 # Weather Forecast Randomizer
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+[![CI](https://github.com/tedmarov/WeatherForecastRandomizer/actions/workflows/ci.yml/badge.svg)](https://github.com/tedmarov/WeatherForecastRandomizer/actions/workflows/ci.yml)
 
-## Development server
+An Angular 17 frontend displaying five randomly generated forecasts from an ASP.NET Core 8 API. Data is simulated, not a real weather prediction.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Architecture
 
-## Code scaffolding
+- `WeatherAngularASP.Server` — Web API. `WeatherForecastController` delegates to an injected `IForecastService`; `RandomForecastService` generates forecasts using .NET 8's `TimeProvider` so dates are testable. Exposes `/weatherforecast` and a `/health` endpoint.
+- `weatherangularasp.client` — Angular SPA that fetches and displays the forecasts.
+- `WeatherAngularASP.Server.Tests` — xUnit tests, run by GitHub Actions on every push and pull request to `main` alongside the Angular Karma tests.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Run locally
 
-## Build
+Prerequisites: .NET 8 SDK, Node.js and npm.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+From the repository root, start the API without the Visual Studio SPA launch profile:
 
-## Running unit tests
+```sh
+dotnet run --project WeatherAngularASP.Server --no-launch-profile -p:ShouldRunNpmInstall=false -- --urls http://localhost:5266
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+In another terminal (POSIX shell):
 
-## Running end-to-end tests
+```sh
+cd weatherangularasp.client
+npm ci
+ASPNETCORE_URLS=http://localhost:5266 npm start
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Open http://localhost:4200. The frontend proxies `/weatherforecast` to the API. Check API liveness at http://localhost:5266/health.
 
-## Further help
+## Tests
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Backend — from the repository root:
+
+```sh
+dotnet test WeatherAngularASP.Server.Tests/WeatherAngularASP.Server.Tests.csproj -p:ShouldRunNpmInstall=false
+```
+
+HTTP tests host the API in memory and check status codes, JSON shape, five upcoming dates and temperature bounds; unit tests pin service behavior with a fixed `TimeProvider`. No browser or running server is required.
+
+Frontend — from `weatherangularasp.client` (requires Chrome):
+
+```sh
+npm test
+```
